@@ -1,0 +1,95 @@
+
+body{
+  background:rgba(253, 253, 252, 0.7);
+  
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.container-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    margin-top: 20rem;
+}
+
+.tiles1{
+    height: 5vh;
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    place-items: center;
+    cursor: pointer;
+  }
+
+  .tiles2{
+    height: 5vh;
+    margin-top: 0;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    place-items: center;
+  }
+  .single{
+    padding: 2rem;
+    font-size: 2rem;
+  }
+  
+  .screen{
+    padding: 3rem;
+    width: 10px;
+    height: 10px;
+    border: 5px solid whitesmoke;
+    border-radius: 10px;
+      
+  }
+  .li2Select{
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    padding:0;
+    margin: 0;
+    font-size: 2rem;
+  }
+  .selected{
+    padding: 2rem;
+    font-size: 2rem;
+  }
+  .selected:active, .selected:focus{
+    border: 2px dashed black;
+    padding: 2rem;
+    font-size: 2rem;
+  }
+
+  .screen:hover{
+    border: 4px dashed rgb(83, 144, 235);
+    transition: border linear 2s;
+  }
+
+  li{
+      list-style-type: none;
+  }
+  button{
+    background: blue;
+    opacity: 0.6;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    border: 3px solid rgb(83, 144, 235);
+    padding: 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
