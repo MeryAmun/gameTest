@@ -29,42 +29,60 @@ keys.forEach((key, index) => {
   singleLi[key].onclick = border;
   function border(){
     singleLi[key].setAttribute('class', 'selected');
-    };
-    singleLi[key].onmouseout =  interval;
-    function interval(){
-      const keys2 = Object.keys(ul.children);
-keys2.forEach((key2, index) => {
-  const singleLi2 = ul2.children;
-  singleLi2[key2].onclick =  change;
-  
-  function change(){
-    
-     singleLi2[key2].style.border = "none";
-    singleLi2[key2].setAttribute('class', 'li2Select');
-   const newClass = singleLi2[key].className
-singleLi[key].setAttribute('class', `${newClass}`);
-singleLi2[key2].append(singleLi[key]);
-
-
-   if(singleLi.length < 1 && ul2.innerHTML === [5,4,2,6,1,3,7,8,9]){
-    head.innerHTML = "Game finished, you won";
-   }else if(singleLi.length < 1 && ul2.innerHTML !== [5,4,2,6,1,3,7,8,9]){
-    head.innerHTML = "game finished, you lose";
-  }else{
-    head.innerHTML = `${singleLi.length} moves left`;
-   }
-  }
+    // console.log(singleLi[key], '1')
+    const newItem = document.querySelector('.selected');
+console.log(newItem, '1');
+localStorage.setItem('new',singleLi[key]);
  
-});
-    }
+  //end of border 
+   
+
+    const keys2 = Object.keys(ul.children);
+     keys2.forEach((key2, index) => {
+       const singleLi2 = ul2.children;
+       singleLi2[key2].addEventListener("click", change); 
+       
+       function change(){
+         
+          singleLi2[key2].style.border = "none";
+         singleLi2[key2].setAttribute('class', 'li2Select');
+         console.log(singleLi2[key2])
+        const newClass = singleLi2[key].className
+     singleLi[key].setAttribute('class', `${newClass}`);
+     singleLi2[key2].append(singleLi[key]);
+     console.log(singleLi[key])
+     
+        if(singleLi.length < 1 && ul2.innerHTML === [5,4,2,6,1,3,7,8,9]){
+         head.innerHTML = "Game finished, you won";
+        }else if(singleLi.length < 1 && ul2.innerHTML !== [5,4,2,6,1,3,7,8,9]){
+         head.innerHTML = "game finished, you lose";
+       }else{
+         head.innerHTML = `${singleLi.length} moves left`;
+        }
+       }
+      
+     });
+
+    //end of second click
+     
+   };
+   
     
 });
+var newLiItem = localStorage.getItem("new");
+console.log(newLiItem);
+
+// var frag = document.createDocumentFragment();
+// frag.appendChild(newLiItem);
+// var htmll = frag.innerHTML;
+// delete frag; //
+// console.log(htmll)
 // if( ul2.innerHTML === [5,4,2,6,1,3,789]){
 //   head2.innerHTML = "you won";
 // }else{
 //   head2.innerHTML = "gamefinished, you lose";
 // }
-console.log(ul2)
+//console.log(ul2)
 
 
 button.addEventListener("click", function(){
@@ -83,3 +101,30 @@ button.addEventListener("click", function(){
      // }else{
      //   head.innerHTML = "game finished, you won";
      //  }
+
+
+
+    //  const keys2 = Object.keys(ul.children);
+    //  keys2.forEach((key2, index) => {
+    //    const singleLi2 = ul2.children;
+    //    singleLi2[key2].onclick =  change;
+       
+    //    function change(){
+         
+    //       singleLi2[key2].style.border = "none";
+    //      singleLi2[key2].setAttribute('class', 'li2Select');
+    //     const newClass = singleLi2[key].className
+    //  singleLi[key].setAttribute('class', `${newClass}`);
+    //  singleLi2[key2].append(singleLi[key]);
+    //  //console.log(singleLi[key])
+     
+    //     if(singleLi.length < 1 && ul2.innerHTML === [5,4,2,6,1,3,7,8,9]){
+    //      head.innerHTML = "Game finished, you won";
+    //     }else if(singleLi.length < 1 && ul2.innerHTML !== [5,4,2,6,1,3,7,8,9]){
+    //      head.innerHTML = "game finished, you lose";
+    //    }else{
+    //      head.innerHTML = `${singleLi.length} moves left`;
+    //     }
+    //    }
+      
+    //  });
